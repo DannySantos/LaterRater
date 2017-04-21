@@ -1,0 +1,39 @@
+<div class="col-sm-8 col-sm-offset-2">
+  <p>
+    <strong>Title:</strong>
+    <%= @item.title %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @item.category %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= @item.status %>
+  </p>
+
+  <p>
+    <strong>Rating:</strong>
+    <%= @item.rating %>
+  </p>
+
+  <p>
+    <strong>Priority:</strong>
+    <%= @item.priority %>
+  </p>
+
+  <p>
+    <strong>Link:</strong>
+    <%= link_to @item.link, @item.link, target: "_blank" %>
+  </p>
+
+  <p>
+    <strong>Tags:</strong>
+    <%= @item.all_tags %>
+  </p>
+
+  <%= link_to 'Edit', edit_item_path(@item) %> |
+  <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

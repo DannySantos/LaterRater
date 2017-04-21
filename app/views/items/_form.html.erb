@@ -1,0 +1,52 @@
+<%= form_for(item) do |f| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.select :category, category_options, {}, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, status_options, {}, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.select :rating, rating_options, {}, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priority %>
+    <%= f.select :priority, priority_options, {}, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :all_tags, "Tags" %>
+    <%= f.text_field :all_tags, value: @item.all_tags, class: "form-control", placeholder: "Tags separated with a space" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Item", class: "form-control btn" %>
+  </div>
+<% end %>

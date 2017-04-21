@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LaterRater</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <header class="primary">
+      <div class="col-sm-6 col-sm-offset-3">
+        <%= link_to root_path do %>
+          <h1>LaterRater</h1>
+        <% end %>
+      </div>
+      
+      <div class="col-sm-3">
+        <%= link_to "+", new_item_path %>
+      </div>
+      
+      <div class="clb"></div>
+    </header>
+    
+    <%= yield %>
+  </body>
+</html>

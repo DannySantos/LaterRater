@@ -1,0 +1,79 @@
+.fwn {
+  font-weight: normal !important;
+}
+
+.fwb {
+  font-weight: bold;
+}
+
+.text-xl {
+  font-size: 3em !important;
+}
+
+.text-l  {
+  font-size: 1.5em !important;
+}
+
+.text-s  {
+  font-size: 0.8em !important;
+}
+
+.text-xs  {
+  font-size: 0.5em !important;
+}
+
+.tal {
+  text-align: left !important;
+}
+
+.tar {
+  text-align: right !important;
+}
+
+.tac {
+  text-align: center !important;
+}
+
+.tdn {
+  text-decoration: none !important;
+}
+
+.tdu {
+  text-decoration: underline;
+}
+
+.ttn {
+  text-transform:none;
+}
+
+.ttc {
+  text-transform:capitalize;
+}
+
+.ttu {
+  text-transform:uppercase;
+}
+
+.ttl {
+  text-transform:lowercase;
+}
+
+.whsnw {
+  white-space:nowrap;
+}
+
+$font-sizes-pixels: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 30;
+
+@each $size in $font-sizes-pixels {
+  .fz#{$size} {
+    font-size: #{$size}px !important;
+  }
+}
+
+$font-sizes-ems: 1 2 3 4 5;
+
+@each $size in $font-sizes-ems {
+  .fz#{$size} {
+    font-size: #{$size}em !important;
+  }
+}
