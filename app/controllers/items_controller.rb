@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  load_and_authorize_resource
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :convert_enums, only: [:create, :update]
 
@@ -8,6 +7,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    authorize! :read, @item
   end
 
   def new
@@ -33,6 +33,8 @@ class ItemsController < ApplicationController
   end
 
   def update
+    authorize! :update, @item
+    
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
@@ -45,6 +47,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, @item
     @item.destroy
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
