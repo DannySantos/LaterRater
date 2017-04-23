@@ -2,20 +2,22 @@
   <div class="filters remainder-height col-sm-3">
     <h2>Filters</h2>
       
-    <%= form_tag(items_path, method: :get, class: "label") do %>
-      <%= label_tag :category %>
-      <%= select_tag "filter[category]", category_options, prompt: "Filter by category", class: "form-control" %>
-      
-      <%= label_tag :status %>
-      <%= select_tag "filter[status]", status_options, prompt: "Filter by status", class: "form-control" %>
+    <% if current_user %>
+      <%= form_tag(items_path, method: :get, class: "label") do %>
+        <%= label_tag :category %>
+        <%= select_tag "filter[category]", category_options, prompt: "Filter by category", class: "form-control" %>
 
-      <%= label_tag :rating %>
-      <%= select_tag "filter[rating]", rating_options, prompt: "Filter by rating", class: "form-control" %>
+        <%= label_tag :status %>
+        <%= select_tag "filter[status]", status_options, prompt: "Filter by status", class: "form-control" %>
 
-      <%= label_tag :priority %>
-      <%= select_tag "filter[priority]", priority_options, prompt: "Filter by priority", class: "form-control" %>  
-      
-      <%= submit_tag "Filter", class: "form-control btn btn-primary" %>
+        <%= label_tag :rating %>
+        <%= select_tag "filter[rating]", rating_options, prompt: "Filter by rating", class: "form-control" %>
+
+        <%= label_tag :priority %>
+        <%= select_tag "filter[priority]", priority_options, prompt: "Filter by priority", class: "form-control" %>  
+
+        <%= submit_tag "Filter", class: "form-control btn btn-primary" %>
+      <% end %>
     <% end %>
   </div>
   
