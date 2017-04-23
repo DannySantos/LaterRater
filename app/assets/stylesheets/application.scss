@@ -19,8 +19,9 @@ a {
   font-weight: bold;
 }
 
-label {
+.label label {
   margin-bottom: 5px;
+  display: block;
 }
 
 header.primary {
@@ -32,7 +33,7 @@ header.primary {
     margin: 0;
     padding: 0;
     color: #fff;
-    font-size: 3em;
+    font-size: 2em;
   }
   
   a {

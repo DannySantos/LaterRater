@@ -3,11 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .items {
+  table {
+    border-collapse: collapse;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #eaeaea;
+  }
+  
+  thead tr:first-child {
+    background-color: #900e68;
+    color: #fff;
+  }
+  
   th {
     text-align: left;
   }
   
   th, td {
     padding: 10px;
+  }
+  
+  th, td {
+    width: 15%;
+    text-align: center;
+  }
+  
+  th:first-child, td:first-child {
+    width: 40%;
+    text-align: left;
+  }
+  
+  .filters {
+    background-color: #eaeaea;
   }
 }

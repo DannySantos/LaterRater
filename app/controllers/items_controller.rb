@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = current_user.items if current_user
+    filter_items if params[:filter]
   end
 
   def show
@@ -70,5 +71,23 @@ class ItemsController < ApplicationController
     params[:item][:status] = params[:item][:status].to_i if params[:item][:status]
     params[:item][:rating] = params[:item][:rating].to_i if params[:item][:rating]
     params[:item][:priority] = params[:item][:priority].to_i if params[:item][:priority]
+  end
+  
+  def filter_items
+    unless params[:filter][:category].blank?
+      @items = @items.where(category: params[:filter][:category])
+    end
+    
+    unless params[:filter][:status].blank?
+      @items = @items.where(status: params[:filter][:status])
+    end
+    
+    unless params[:filter][:rating].blank?
+      @items = @items.where(rating: params[:filter][:rating])
+    end
+    
+    unless params[:filter][:priority].blank?
+      @items = @items.where(priority: params[:filter][:priority])
+    end
   end
 end

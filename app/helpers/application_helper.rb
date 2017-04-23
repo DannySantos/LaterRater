@@ -1,31 +1,31 @@
 module ApplicationHelper
   def category_options
     options_for_select([
-      ["Book", 0],
-      ["Movie", 1],
-      ["TV Show", 2],
-      ["Video", 3],
-      ["Game", 4],
-      ["Article", 5]
-      ], get_preselected_option("category"))
+      ["Book", "Book"],
+      ["Movie", "Movie"],
+      ["TV Show", "TV Show"],
+      ["Video", "Video"],
+      ["Game", "Game"],
+      ["Article", "Article"]
+    ], get_preselected_option("category"))
   end
   
   def status_options
     options_for_select([
-      ["To Read", 0],
-      ["To Watch", 1],
-      ["To Play", 2],
-      ["Read", 3],
-      ["Watched", 4],
-      ["Played", 5]
+      ["To Read", "To Read"],
+      ["To Watch", "To Watch"],
+      ["To Play", "To Play"],
+      ["Read", "Read"],
+      ["Watched", "Watched"],
+      ["Played", "Played"]
     ], get_preselected_option("status"))
   end
   
   def priority_options
     options_for_select([
-      ["Low", 0],
-      ["Medium", 1],
-      ["High", 2]
+      ["Low", "Low"],
+      ["Medium", "Medium"],
+      ["High", "High"]
     ], get_preselected_option("priority"))
   end
   
@@ -46,6 +46,7 @@ module ApplicationHelper
   end
   
   def get_preselected_option(attribute)
-    Item.send(attribute.pluralize)[@item.send(attribute)]
+    Item.send(attribute.pluralize)[@item.send(attribute)] if @item
+    params[:filter][attribute] if params[:filter]
   end
 end
