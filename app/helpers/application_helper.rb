@@ -6,7 +6,9 @@ module ApplicationHelper
       ["TV Show", "TV Show"],
       ["Video", "Video"],
       ["Game", "Game"],
-      ["Article", "Article"]
+      ["Article", "Article"],
+      ["Song", "Song"],
+      ["Documentary", "Documentary"]
     ], get_preselected_option("category"))
   end
   
