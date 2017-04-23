@@ -1,33 +1,33 @@
 <% if current_user %>
   <main class="items row">
     <div class="col-sm-8 col-sm-offset-2">
-        <h1>Items</h1>
+      <h1>Items</h1>
 
-        <table>
-          <thead>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @items.each do |item| %>
             <tr>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Rating</th>
+              <td><%= link_to item.title, item_path(item) %></td>
+              <td><%= item.category %></td>
+              <td><%= item.rating %></td>
             </tr>
-          </thead>
+          <% end %>
+        </tbody>
+      </table>
 
-          <tbody>
-            <% @items.each do |item| %>
-              <tr>
-                <td><%= link_to item.title, item_path(item) %></td>
-                <td><%= item.category %></td>
-                <td><%= item.rating %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <br>
 
-        <br>
-
-        <div class="tac">
-          <%= link_to '+ Add Item', new_item_path, class: "btn btn-primary" %>
-        </div>
+      <div class="tac">
+        <%= link_to '+ Add Item', new_item_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </main>
 <% else %>

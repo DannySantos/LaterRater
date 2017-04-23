@@ -36,7 +36,9 @@
 
   <p>
     <strong>Tags:</strong>
-    <%= @item.all_tags %>
+    <% @item.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag) %>
+    <% end %>
   </p>
 
   <%= link_to 'Edit', edit_item_path(@item) %> |
