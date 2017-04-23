@@ -1,7 +1,55 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Item.create!([
+  {title: "Christopher Hitchens last public appearance with Richard Dawkins", category: "Video", status: "To Watch", rating: 0, priority: "High", link: "https://www.youtube.com/watch?v=B06tiTwAuvg", user_id: 1, notes: nil},
+  {title: "Russell Brand on The Zeitgeist Movement", category: "Video", status: "To Watch", rating: 0, priority: "Medium", link: "https://www.youtube.com/watch?v=yY3ZrKd6SD8&feature=youtu.be", user_id: 1, notes: nil},
+  {title: "IAMA: Christopher Hitchens | reddit's top ten questions", category: "Video", status: "Watched", rating: 8, priority: "Low", link: "https://www.youtube.com/watch?v=78Jl2iPPUtI", user_id: 1, notes: nil},
+  {title: "It's Always Sunny: Liberty Bell Episode", category: "TV Show", status: "To Watch", rating: 0, priority: "Low", link: "", user_id: 1, notes: nil},
+  {title: "\"Church Going\" by Philip Larkin", category: "Video", status: "Watched", rating: 8, priority: "Low", link: "https://www.youtube.com/watch?v=w5aKknj-q3o", user_id: 1, notes: nil},
+  {title: "Spelunky Noclip", category: "Video", status: "To Watch", rating: 0, priority: "High", link: "https://www.youtube.com/watch?v=jv434Xyybqc", user_id: 1, notes: nil},
+  {title: "Q&A: Christopher Hitchens", category: "Video", status: "Watched", rating: 9, priority: "Low", link: "https://www.youtube.com/watch?v=nPn4GfKnOZs", user_id: 1, notes: nil},
+  {title: "9 Tips for Indie Game Developers I Learned at GDC 2013", category: "Article", status: "To Read", rating: 0, priority: "Medium", link: "https://gamedevelopment.tutsplus.com/articles/9-tips-for-indie-game-developers-i-learned-at-gdc-2013--gamedev-6591", user_id: 1, notes: nil},
+  {title: "QI", category: "TV Show", status: "To Watch", rating: 9, priority: "Medium", link: "", user_id: 1, notes: nil},
+  {title: "The Witness Noclip", category: "Video", status: "To Watch", rating: 0, priority: "Medium", link: "https://www.youtube.com/watch?v=YdSdvIRkkDY", user_id: 1, notes: nil},
+  {title: "The 5 Filters of the Mass Media Machine | Noam Chomsky", category: "Video", status: "Watched", rating: 8, priority: "Low", link: "https://www.youtube.com/watch?v=34LGPIXvU5M", user_id: 1, notes: nil}
+])
+ItemTag.create!([
+  {item_id: 1, tag_id: 1},
+  {item_id: 1, tag_id: 2},
+  {item_id: 2, tag_id: 1},
+  {item_id: 2, tag_id: 2},
+  {item_id: 3, tag_id: 1},
+  {item_id: 3, tag_id: 3},
+  {item_id: 4, tag_id: 4},
+  {item_id: 5, tag_id: 5},
+  {item_id: 5, tag_id: 6},
+  {item_id: 6, tag_id: 7},
+  {item_id: 6, tag_id: 8},
+  {item_id: 6, tag_id: 9},
+  {item_id: 6, tag_id: 10},
+  {item_id: 7, tag_id: 1},
+  {item_id: 7, tag_id: 2},
+  {item_id: 8, tag_id: 10},
+  {item_id: 9, tag_id: 1},
+  {item_id: 9, tag_id: 11},
+  {item_id: 9, tag_id: 4},
+  {item_id: 10, tag_id: 7},
+  {item_id: 10, tag_id: 10},
+  {item_id: 10, tag_id: 12},
+  {item_id: 10, tag_id: 9},
+  {item_id: 11, tag_id: 1},
+  {item_id: 11, tag_id: 13}
+])
+Tag.create!([
+  {name: "iq"},
+  {name: "christopher-hitchens"},
+  {name: "russel-brand"},
+  {name: "comedy"},
+  {name: "poetry"},
+  {name: "philip-larkin"},
+  {name: "gaming"},
+  {name: "spelunky"},
+  {name: "documentary"},
+  {name: "game-development"},
+  {name: "stephen-fry"},
+  {name: "jonathan-blow"},
+  {name: "noam-chomsky"}
+])
