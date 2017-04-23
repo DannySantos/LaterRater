@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
+gem 'cancancan', '~> 1.10'
 
 group :development, :test do
   gem 'pry'

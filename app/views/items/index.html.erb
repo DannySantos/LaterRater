@@ -1,31 +1,35 @@
-<main class="items row">
-  <div class="col-sm-8 col-sm-offset-2">
-      <h1>Items</h1>
+<% if current_user %>
+  <main class="items row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h1>Items</h1>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Rating</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @items.each do |item| %>
+        <table>
+          <thead>
             <tr>
-              <td><%= link_to item.title, item_path(item) %></td>
-              <td><%= item.category %></td>
-              <td><%= item.rating %></td>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Rating</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
+          </thead>
 
-      <br>
+          <tbody>
+            <% @items.each do |item| %>
+              <tr>
+                <td><%= link_to item.title, item_path(item) %></td>
+                <td><%= item.category %></td>
+                <td><%= item.rating %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-      <div class="tac">
-        <%= link_to '+ Add Item', new_item_path, class: "btn btn-primary" %>
-      </div>
-  </div>
-</main>
+        <br>
+
+        <div class="tac">
+          <%= link_to '+ Add Item', new_item_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+  </main>
+<% else %>
+   You need to <%= link_to "log in", new_user_session_path %> or <%= link_to "register", new_user_registration_path %>.
+<% end %>

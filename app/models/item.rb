@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   has_many :item_tags
   has_many :tags, through: :item_tags
+  belongs_to :user
   
   enum category: ["Book", "Movie", "TV Show", "Video", "Game", "Article"]
   enum status: ["To Read", "To Watch", "To Play", "Read", "Watched", "Played"]

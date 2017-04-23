@@ -42,6 +42,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes, class: "form-control" %>
+  </div>
+
+  <div class="field">
     <%= f.label :all_tags, "Tags" %>
     <%= f.text_field :all_tags, value: @item.all_tags, class: "form-control", placeholder: "Tags separated with a space" %>
   </div>

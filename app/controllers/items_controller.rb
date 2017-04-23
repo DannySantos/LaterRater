@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :convert_enums, only: [:create, :update]
 
   def index
-    @items = Item.all
+    @items = current_user.items if current_user
   end
 
   def show
@@ -18,6 +19,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user_id = current_user.id
 
     respond_to do |format|
       if @item.save
