@@ -14,12 +14,17 @@
  *= require_self
  */
 
+a {
+  color: #900e68;
+  font-weight: bold;
+}
+
 label {
   margin-bottom: 5px;
 }
 
 header.primary {
-  background-color: #333;
+  background-color: #900e68;
   height: 80px;
   line-height: 80px;
   
@@ -57,7 +62,7 @@ header.primary {
 }
 
 .btn-primary {
-  background-color: #333;
+  background-color: #900e68;
   color: #fff;
   text-decoration: none;
 }
