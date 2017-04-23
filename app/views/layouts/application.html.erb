@@ -9,16 +9,37 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
     <header class="primary">
-      <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-sm-6">
         <%= link_to root_path do %>
           <h1>LaterRater</h1>
         <% end %>
       </div>
       
-      <div class="col-sm-3">
-        <%= link_to "+", new_item_path %>
-      </div>
+      <nav class="top-nav t0 r0">
+        <ul class="tar lisn">
+          <% if current_user %>
+            <li>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Log In", new_user_session_path %>
+            </li>
+
+            <li>
+              <%= link_to "Register", new_user_registration_path %>
+            </li>   
+          <% end %>   
+          
+          <li>
+            <%= link_to "+ Add Item", new_item_path %>
+          </li> 
+        </ul> 
+      </nav>
       
       <div class="clb"></div>
     </header>

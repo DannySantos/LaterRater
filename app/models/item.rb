@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   has_many :item_tags
   has_many :tags, through: :item_tags
   
-  enum category: ["Book", "Movie", "TV Show", "Video", "Game"]
+  enum category: ["Book", "Movie", "TV Show", "Video", "Game", "Article"]
   enum status: ["To Read", "To Watch", "To Play", "Read", "Watched", "Played"]
   enum priority: ["Low", "Medium", "High"]
   enum rating: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

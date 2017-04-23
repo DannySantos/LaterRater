@@ -16,7 +16,6 @@
 
 label {
   margin-bottom: 5px;
-  display: block;
 }
 
 header.primary {
@@ -28,13 +27,37 @@ header.primary {
     margin: 0;
     padding: 0;
     color: #fff;
-    text-align: center;
-    font-size: 1em;
+    font-size: 3em;
   }
   
   a {
     color: #fff;
-    font-size: 3em;
     text-decoration: none;
   }
+  
+  nav.top-nav {
+    li {
+      display: inline;
+      margin-right: 20px;
+    }
+  }
+}
+
+.notice, .alert {
+  position: absolute;
+  width: 50%;
+  background-color: #fff;
+  padding: 30px;
+  margin-left: 25%;
+  margin-top: 50px;
+  z-index: 1000;
+  border: 1px solid #999;
+  text-align: center;
+  box-shadow: 3px 3px #999;
+}
+
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
 }
