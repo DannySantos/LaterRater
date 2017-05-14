@@ -1,33 +1,35 @@
 module ApplicationHelper
   def category_options
     options_for_select([
-      ["Book", 0],
-      ["Movie", 1],
-      ["TV Show", 2],
-      ["Video", 3],
-      ["Game", 4],
-      ["Article", 5],
-      ["Song", 6],
-      ["Documentary", 7]
+      ["Book", "Book"],
+      ["Movie", "Movie"],
+      ["TV Show", "TV Show"],
+      ["Video", "Video"],
+      ["Game", "Game"],
+      ["Article", "Article"],
+      ["Song", "Song"],
+      ["Documentary", "Documentary"]
     ], get_preselected_option("category"))
   end
   
   def status_options
     options_for_select([
-      ["To Read", 0],
-      ["To Watch", 1],
-      ["To Play", 2],
-      ["Read", 3],
-      ["Watched", 4],
-      ["Played", 5]
+      ["To Read", "To Read", style: "display:none;"],
+      ["Read", "Read", style: "display:none;"],
+      ["To Watch", "To Watch", style: "display:none;"],
+      ["Watched", "Watched", style: "display:none;"],
+      ["To Play", "To Play", style: "display:none;"],
+      ["Played", "Played", style: "display:none;"],
+      ["To Listen", "To Listen", style: "display:none;"],
+      ["Listened", "Listened", style: "display:none;"]
     ], get_preselected_option("status"))
   end
   
   def priority_options
     options_for_select([
-      ["Low", 0],
-      ["Medium", 1],
-      ["High", 2]
+      ["Low", "Low"],
+      ["Medium", "Medium"],
+      ["High", "High"]
     ], get_preselected_option("priority"))
   end
   

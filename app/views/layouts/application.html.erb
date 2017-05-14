@@ -38,7 +38,7 @@
           <% end %>   
           
           <li>
-            <%= link_to "+ Add Item", new_item_path %>
+            <span id="add-item-button">+ Add Item</span>
           </li> 
         </ul> 
       </nav>
@@ -47,5 +47,17 @@
     </header>
     
     <%= yield %>
+
+    <div id="popup" class="popup-overlay" style="display:none;">
+      <div class="popup col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+        <div class="close"></div>
+
+        <div id="popup-content-container">
+          <%= render 'items/form', item: @item %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="clb mb30"></div>
   </body>
 </html>

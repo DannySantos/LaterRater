@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :convert_enums, only: [:create, :update]
 
   def index
@@ -13,9 +12,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @button_text = "Add Item"
   end
 
   def edit
+    @button_text = "Update Item"
   end
 
   def create
@@ -58,10 +59,6 @@ class ItemsController < ApplicationController
 
   private
   
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
   def item_params
     params.require(:item).permit(:title, :category, :status, :rating, :priority, :link, :all_tags)
   end

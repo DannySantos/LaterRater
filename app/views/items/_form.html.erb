@@ -1,3 +1,5 @@
+<h1 class="tac">Add Item</h1>
+
 <%= form_for(item, html: {class: "label"}) do |f| %>
   <% if item.errors.any? %>
     <div id="error_explanation">
@@ -11,47 +13,59 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
+  <div class="required-fields">
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :category %>
+      <%= f.select :category, category_options, {prompt: "Select category..."}, class: "form-control" %>
+    </div>
+
+    <div class="status field" style="display:none;">
+      <%= f.label :status %>
+      <%= f.select :status, status_options, {prompt: "Select status..."}, class: "status-select form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :all_tags, "Tags" %>
+      <%= f.text_field :all_tags, value: @item.all_tags, class: "form-control", placeholder: "Tags separated with a space" %>
+    </div>
+    <div class="field tac">
+      <span id="add-item-next" class="btn btn-primary">
+        Add Item
+      </span>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :category %>
-    <%= f.select :category, category_options, {}, class: "form-control" %>
-  </div>
+  <div class="optional-fields" style="display:none;">
+    <h2 class="tac">Optional:</h2>
+    
+    <div class="field">
+      <%= f.label :rating %>
+      <%= f.select :rating, rating_options, {prompt: "Select rating..."}, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.select :status, status_options, {}, class: "form-control" %>
-  </div>
+    <div class="field">
+      <%= f.label :priority %>
+      <%= f.select :priority, priority_options, {prompt: "Set priority..."}, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :rating %>
-    <%= f.select :rating, rating_options, {}, class: "form-control" %>
-  </div>
+    <div class="field">
+      <%= f.label :link %>
+      <%= f.text_field :link, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :priority %>
-    <%= f.select :priority, priority_options, {}, class: "form-control" %>
-  </div>
+    <div class="field">
+      <%= f.label :notes %>
+      <%= f.text_area :notes, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :link %>
-    <%= f.text_field :link, class: "form-control" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_area :notes, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :all_tags, "Tags" %>
-    <%= f.text_field :all_tags, value: @item.all_tags, class: "form-control", placeholder: "Tags separated with a space" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Add Item", class: "form-control btn" %>
+    <div class="actions tac">
+      <%= f.submit "Finish", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
