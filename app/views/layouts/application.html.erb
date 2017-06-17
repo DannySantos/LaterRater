@@ -24,7 +24,7 @@
       <nav class="top-nav t0 r0">
         <ul class="tar lisn">
           <% if current_user %>   
-            <li>
+            <li class="dn-sm">
               <span class="add-item-button">+ Add Item</span>
             </li> 
           <% end %>   
@@ -34,7 +34,9 @@
       <div class="clb"></div>
     </header>
     
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
 
     <div id="popup" class="popup-overlay" style="display:none;">
       <div class="popup col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">

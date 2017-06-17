@@ -1,7 +1,7 @@
 <main class="items">
   <% if current_user %>
     <div class="filters row">
-      <div class="col-sm-12 pt10">
+      <div class="col-sm-12 col-xs-12 pt10">
         <%= form_tag(items_path, method: :get, class: "label") do %>
           <div class="col-sm-3">
             <%= select_tag "filter[category]", category_options, prompt: "Filter by category", class: "select-submit form-control" %>
@@ -35,8 +35,8 @@
             <tr>
               <th>Title</th>
               <th>Category</th>
-              <th>Rating</th>
-              <th>Priority</th>
+              <th class="dn-sm">Rating</th>
+              <th class="dn-sm">Priority</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -46,14 +46,14 @@
               <tr>
                 <td><%= link_to item.title, item_path(item) %></td>
                 <td><%= item.category %></td>
-                <td>
+                <td class="dn-sm">
                   <% if item.rating == 0 %>
                     -
                   <% else %>
                     <%= item.rating %>
                   <% end %>
                 </td>
-                <td><%= item.priority %></td>
+                <td class="dn-sm"><%= item.priority %></td>
                 <td><%= item.status %></td>
               </tr>
             <% end %>
