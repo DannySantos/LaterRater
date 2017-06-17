@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#add-item-button').click(function() {
+  $('.add-item-button').click(function() {
     $('#popup').show();
     $('#popup').css('opacity', '1');
   })

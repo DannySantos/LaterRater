@@ -50,9 +50,11 @@ module ApplicationHelper
   end
   
   def get_preselected_option(attribute)
-    if @item
+    unless @item.id == nil
       Item.send(attribute.pluralize)[@item.send(attribute)] 
-    elsif params[:filter]
+    end
+    
+    if params[:filter]
       params[:filter][attribute]
     end
   end

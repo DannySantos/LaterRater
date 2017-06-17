@@ -15,7 +15,7 @@
     <p class="alert"><%= alert %></p>
     
     <header class="primary">
-      <div class="col-sm-6">
+      <div class="col-sm-4 col-sm-offset-4 tac">
         <%= link_to root_path do %>
           <h1>Later/Rater</h1>
         <% end %>
@@ -23,23 +23,11 @@
       
       <nav class="top-nav t0 r0">
         <ul class="tar lisn">
-          <% if current_user %>
+          <% if current_user %>   
             <li>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to "Log In", new_user_session_path %>
-            </li>
-
-            <li>
-              <%= link_to "Register", new_user_registration_path %>
-            </li>   
+              <span class="add-item-button">+ Add Item</span>
+            </li> 
           <% end %>   
-          
-          <li>
-            <span id="add-item-button">+ Add Item</span>
-          </li> 
         </ul> 
       </nav>
       
