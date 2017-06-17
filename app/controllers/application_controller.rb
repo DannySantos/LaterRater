@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   
   def set_item
-    if params[:id]
+    if controller_name == "items" && params[:id]
       @item = Item.find(params[:id])
     else
       @item = Item.new

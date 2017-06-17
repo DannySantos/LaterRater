@@ -1,4 +1,6 @@
-<h1 class="tac">Add Item</h1>
+<% unless action_name == "edit" %>
+  <h1 class="tac">Add Item</h1>
+<% end %>
 
 <%= form_for(item, html: {class: "label"}) do |f| %>
   <% if item.errors.any? %>
@@ -34,14 +36,22 @@
       <%= f.text_field :all_tags, value: @item.all_tags, class: "form-control", placeholder: "Tags separated with a space" %>
     </div>
     <div class="field tac">
-      <span id="add-item-next" class="btn btn-primary">
-        Add Item
-      </span>
+      <% if action_name == "edit" %>
+        <span id="add-item-next" class="btn btn-primary">
+          Next
+        </span>
+      <% else %>
+        <span id="add-item-next" class="btn btn-primary">
+          Add Item
+        </span>
+      <% end %>
     </div>
   </div>
 
   <div class="optional-fields" style="display:none;">
-    <h2 class="tac">Optional:</h2>
+    <% unless action_name == "edit" %>
+      <h2 class="tac">Optional:</h2>
+    <% end %>
     
     <div class="field">
       <%= f.label :rating %>
